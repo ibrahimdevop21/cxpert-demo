@@ -1,0 +1,110 @@
+site:
+  name: 'CXperts'
+  description: 'Leading Business Process Outsourcing company delivering exceptional customer experience services'
+  defaultLanguage: 'en'
+  site: 'https://cxpertseg.com'
+  base: '/'
+  trailingSlash: false
+
+# Default metadata
+metadata:
+  title:
+    default: 'CXperts - Excellence in Customer Experience'
+    template: '%s — CXperts'
+  description: 'CXperts is an Egyptian-based BPO company specializing in delivering exceptional customer experience services across various fields.'
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    site_name: 'CXperts'
+    images:
+      - url: '~/assets/images/default.png'
+        width: 1200
+        height: 628
+    type: website
+  twitter:
+    handle: '@cxpertseg'
+    site: '@cxpertseg'
+    cardType: summary_large_image
+
+i18n:
+  language: en
+  textDirection: ltr
+
+# Company information
+company:
+  name: 'CXperts'
+  address: 'Ai Bustan Mall, 18 Al Bustan Street, Downtown, 9th Floor, APT 7, Cairo, Egypt'
+  contact:
+    email: 'contact@cxpertseg.com'
+    phone: 
+      egypt: '1099049595'
+      spain: '(+34) 290002124'
+
+# Navigation
+navigation:
+  - name: Home
+    href: /
+  - name: About
+    href: /about
+  - name: Services
+    href: /services
+  - name: Partners
+    href: /partners
+  - name: Careers
+    href: /careers
+  - name: Contact
+    href: /contact
+
+# Footer configuration
+footer:
+  socialLinks:
+    - name: Twitter
+      url: https://twitter.com/cxpertseg
+      icon: twitter
+    - name: LinkedIn
+      url: https://linkedin.com/company/cxperts
+      icon: linkedin
+    - name: Facebook
+      url: https://facebook.com/cxpertseg
+      icon: facebook
+
+apps:
+  blog:
+    isEnabled: true
+    postsPerPage: 6
+
+    post:
+      isEnabled: true
+      permalink: '/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
+      robots:
+        index: true
+
+    list:
+      isEnabled: true
+      pathname: 'blog' # Blog main path, you can change this to "articles" (/articles)
+      robots:
+        index: true
+
+    category:
+      isEnabled: true
+      pathname: 'category' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
+      robots:
+        index: true
+
+    tag:
+      isEnabled: true
+      pathname: 'tag' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
+      robots:
+        index: false
+
+    isRelatedPostsEnabled: true
+    relatedPostsCount: 4
+
+analytics:
+  vendors:
+    googleAnalytics:
+      id: null # or "G-XXXXXXXXXX"
+
+ui:
+  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"

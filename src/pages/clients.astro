@@ -1,0 +1,163 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { Image } from 'astro:assets';
+
+// Import client logos
+import redingtonLogo from '~/assets/cx-logos/Redington_Logo.jpg';
+import orascomLogo from '~/assets/cx-logos/Orascom.png';
+import hawanaLogo from '~/assets/cx-logos/Hawana_Salalah-300x210.png';
+import jebelLogo from '~/assets/cx-logos/jebel-safeh.jpg';
+import voskerLogo from '~/assets/cx-logos/VOSKER_Logo.png';
+import spiroLogo from '~/assets/cx-logos/spiro.png';
+import spypointLogo from '~/assets/cx-logos/spypoint.png';
+import lemonLogo from '~/assets/cx-logos/big-black-lemon-logo-1342x993.png';
+
+const metadata = {
+  title: 'Our Clients',
+};
+
+const clients = [
+  {
+    name: 'Redington',
+    logo: redingtonLogo,
+    description: 'Leading technology distributor in the MENA region',
+  },
+  {
+    name: 'ORASCOM',
+    logo: orascomLogo,
+    description: 'Major construction and development corporation',
+  },
+  {
+    name: 'HAWANA SALALAH',
+    logo: hawanaLogo,
+    description: 'Luxury resort destination in Oman',
+  },
+  {
+    name: 'Jebel Sifah MARINA',
+    logo: jebelLogo,
+    description: 'Premier marina and tourism destination',
+  },
+  {
+    name: 'VOSKER',
+    logo: voskerLogo,
+    description: 'Innovative security solutions provider',
+  },
+  {
+    name: 'Spiro',
+    logo: spiroLogo,
+    description: 'Advanced technology solutions company',
+  },
+  {
+    name: 'SpyPoint',
+    logo: spypointLogo,
+    description: 'Leading surveillance technology provider',
+  },
+  {
+    name: 'Lemon',
+    logo: lemonLogo,
+    description: 'Modern healthcare solutions provider',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+  <HeroText
+    title="Our Clients"
+    subtitle="Trusted by leading companies across diverse industries"
+  />
+
+  <!-- Clients Grid -->
+  <section class="py-16 px-4 mx-auto max-w-6xl lg:py-20">
+    <div class="flex flex-col mb-12 text-center">
+      <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-4">Success Stories</h2>
+      <p class="text-lg text-gray-600 dark:text-gray-400">
+        We're proud to serve industry leaders and help them achieve their business goals through exceptional customer experience solutions.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {clients.map(client => (
+        <div class="flex flex-col items-center p-6 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+          <div class="w-48 h-32 mb-4 flex items-center justify-center">
+            <Image
+              src={client.logo}
+              alt={`${client.name} logo`}
+              class="object-contain w-full h-full"
+              width={192}
+              height={128}
+            />
+          </div>
+          <h3 class="text-xl font-bold mb-2 text-center">{client.name}</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-center">{client.description}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Content Widget **************** -->
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Global Reach',
+        description:
+          'Serving clients across multiple countries and industries.',
+      },
+      {
+        title: 'Industry Expertise',
+        description:
+          'Deep understanding of various sectors and their unique challenges.',
+      },
+      {
+        title: 'Customer Success',
+        description:
+          'Proven track record of delivering exceptional results for our clients.',
+      },
+    ]}
+    image={{ src: '~/assets/images/partners.jpg', alt: 'CXperts Clients' }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Client Success</h3>
+      We help our clients achieve their business goals through innovative customer experience solutions.
+    </Fragment>
+  </Content>
+
+  <!-- Testimonials -->
+  <Content>
+    <Fragment slot="content">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-8">Client Testimonials</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <blockquote class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+          <p class="mb-4">"CXperts has made us see how reliability and consistency can create magic."</p>
+          <footer class="font-semibold">- Mohamed Haroun, Co-Founder, KitesDev</footer>
+        </blockquote>
+        <blockquote class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+          <p class="mb-4">"CXperts has rapidly familiarized itself with the environment to suit a challenging market and derived outstanding performance. We're very proud to work with this team."</p>
+          <footer class="font-semibold">- CEO, G2A Consulting</footer>
+        </blockquote>
+      </div>
+    </Fragment>
+  </Content>
+
+  <!-- CallToAction Widget *********** -->
+  <CallToAction
+    title="Join Our Success Stories"
+    subtitle="Experience the CXperts difference in customer experience solutions"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contact Us',
+        href: '/contact',
+      },
+      {
+        text: 'Our Services',
+        href: '/services',
+      },
+    ]}
+  />
+</Layout>

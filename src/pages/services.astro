@@ -1,0 +1,149 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Our Services',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+  <HeroText
+    tagline="Services"
+    title="Comprehensive Business Solutions"
+  >
+    <Fragment slot="subtitle">
+      We offer a wide range of services designed to enhance your business operations and customer experience. Our solutions are tailored to meet your specific needs and drive your success.
+    </Fragment>
+  </HeroText>
+
+  <!-- Features2 Widget ************** -->
+  <Features2
+    title="Core Services"
+    subtitle="Comprehensive solutions for your business needs"
+    items={[
+      {
+        title: 'HR Outsourcing',
+        description:
+          'Complete human resource management solutions including recruitment, training, and employee development.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'IT Outsourcing',
+        description:
+          'Technology support and management services to keep your business running smoothly.',
+        icon: 'tabler:device-laptop',
+      },
+      {
+        title: 'Full Outsourcing Services',
+        description:
+          'End-to-end business process outsourcing solutions customized to your requirements.',
+        icon: 'tabler:building',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'HR Consultation',
+        description:
+          'Expert guidance in human resource management and organizational development.',
+      },
+      {
+        title: 'Marketing Consultation',
+        description:
+          'Strategic marketing solutions to help your business grow and reach target audiences.',
+      },
+      {
+        title: 'Data Analytics',
+        description:
+          'Advanced data analysis services for informed decision-making and business intelligence.',
+      },
+    ]}
+    image={{ src: '~/assets/images/services.jpg', alt: 'CXperts Services' }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Specialized Services</h3>
+      Our expert consultants provide comprehensive guidance and solutions across various business domains.
+    </Fragment>
+  </Content>
+
+  <!-- Features2 Widget ************** -->
+  <Features2
+    title="Digital Solutions"
+    subtitle="Modern technology solutions for your business"
+    items={[
+      {
+        title: 'Custom Applications',
+        description: 'Tailored software solutions designed to meet your specific business needs.',
+        icon: 'tabler:apps',
+      },
+      {
+        title: 'Cloud Solutions',
+        description: 'Secure and scalable cloud infrastructure and services.',
+        icon: 'tabler:cloud',
+      },
+      {
+        title: 'License Solutions',
+        description: 'Software licensing and management services.',
+        icon: 'tabler:license',
+      },
+      {
+        title: 'IoT Solutions',
+        description: 'Connected device solutions including gateways and sensors.',
+        icon: 'tabler:device-analytics',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+  <Content
+    items={[
+      {
+        title: 'Telesales & Telemarketing',
+        description:
+          'Professional telesales services integrated with social media marketing.',
+      },
+      {
+        title: 'Medicare Campaigns',
+        description:
+          'Specialized campaigns for healthcare and medical benefits.',
+      },
+      {
+        title: 'DME Accounts',
+        description:
+          'Comprehensive management of Durable Medical Equipment accounts.',
+      },
+    ]}
+    image={{ src: '~/assets/images/specialized.jpg', alt: 'Specialized Services' }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Specialized Services</h3>
+      Our dedicated teams provide specialized services tailored to specific industries and needs.
+    </Fragment>
+  </Content>
+
+  <!-- CallToAction Widget *********** -->
+  <CallToAction
+    title="Ready to Transform Your Business?"
+    subtitle="Contact us today to discuss how our services can benefit your organization."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get Started',
+        href: '/contact',
+      },
+      {
+        text: 'Learn More',
+        href: '/about',
+      },
+    ]}
+  />
+</Layout>

@@ -1,0 +1,80 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Contact Us',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+  <HeroText
+    title="Contact Us"
+    subtitle="Get in touch with our team to learn more about how we can help transform your customer experience."
+  />
+
+  <!-- Contact Widget ******************* -->
+  <ContactUs
+    title="Let's Connect"
+    subtitle="Our team is here to help. Send us a message and we'll respond as soon as possible."
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Name',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Email',
+      },
+    ]}
+    textarea={{
+      label: 'Message',
+    }}
+    disclaimer={{
+      label:
+        'By submitting this contact form, you acknowledge and agree to the storage of your submitted information so we can provide follow-up contact.',
+    }}
+    description="Our team typically responds within 24 business hours."
+  />
+
+  <!-- Features2 Widget ************** -->
+  <Features2
+    title="Our Offices"
+    subtitle="Visit us at our locations"
+    items={[
+      {
+        title: 'Cairo, Egypt',
+        description: 'Ai Bustan Mall, 18 Al Bustan Street, Downtown, 9th Floor, APT 7',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+  <Features2
+    title="Contact Information"
+    subtitle="Reach out through your preferred channel"
+    items={[
+      {
+        title: 'Phone',
+        description: 'Egypt: 1099049595\nSpain: (+34) 290002124',
+        icon: 'tabler:phone',
+      },
+      {
+        title: 'Email',
+        description: 'contact@cxpertseg.com',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Social Media',
+        description: 'Follow us on LinkedIn, Twitter, and Facebook',
+        icon: 'tabler:brand-linkedin',
+      },
+    ]}
+  />
+</Layout>

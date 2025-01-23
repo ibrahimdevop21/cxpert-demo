@@ -1,0 +1,151 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'CXperts - Excellence in Customer Experience',
+  description: 'CXperts is an Egyptian-based BPO company specializing in delivering exceptional customer experience services across various fields.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+  <Hero
+    tagline="Welcome to CXperts"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Our Services',
+        href: '/services',
+      },
+      {
+        text: 'Contact Us',
+        href: '/contact',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Elevating Customer Experience through Innovation and Excellence
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      CXperts is a leading Business Process Outsourcing company founded on the legacy of thirteen previous companies under the GO Group. We specialize in delivering exceptional customer experience services across various fields.
+    </Fragment>
+  </Hero>
+
+  <!-- Features Widget *************** -->
+  <Features
+    id="features"
+    title="Our Core Services"
+    subtitle="Comprehensive solutions tailored to your business needs"
+    items={[
+      {
+        title: 'Outsourcing Services',
+        description: 'Full-scale outsourcing solutions including Human Resources, Information Technology, and comprehensive business services.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'HR Consultation',
+        description: 'Expert guidance in human resource management, helping organizations optimize their workforce and operations.',
+        icon: 'tabler:briefcase',
+      },
+      {
+        title: 'Marketing Consultation',
+        description: 'Strategic marketing solutions to help businesses grow and reach their target audience effectively.',
+        icon: 'tabler:chart-arrows',
+      },
+      {
+        title: 'Data Analytics',
+        description: 'Advanced data analysis services to drive informed decision-making and business intelligence.',
+        icon: 'tabler:chart-dots',
+      },
+      {
+        title: 'Digital Solutions',
+        description: 'Cutting-edge digital solutions including applications, cloud services, and IoT implementations.',
+        icon: 'tabler:device-laptop',
+      },
+      {
+        title: 'Telesales & Telemarketing',
+        description: 'Integrated sales solutions combining social media marketing and discovery calls.',
+        icon: 'tabler:phone-call',
+      },
+    ]}
+  />
+
+  <!-- Stats Widget ****************** -->
+  <Stats
+    title="Our Global Impact"
+    stats={[
+      { title: 'Global Markets', amount: '7+' },
+      { title: 'Key Partners', amount: '8+' },
+      { title: 'Years Experience', amount: '13+' },
+      { title: 'Success Stories', amount: '100+' },
+    ]}
+  />
+
+  <!-- Steps Widget ****************** -->
+  <Steps
+    title="Our Journey"
+    items={[
+      {
+        title: 'Redington Partnership',
+        description: 'December 2022: Partnered with Redington for support line services in MENA region',
+      },
+      {
+        title: 'G2A Consulting Group',
+        description: 'November 2022: Collaborated for medical benefits sales in USA',
+      },
+      {
+        title: 'Vodafone Business Center',
+        description: 'February 2023: Acquired Vodafone Business Center and Go Solar Australia Campaign',
+      },
+      {
+        title: 'VOSKER Partnership',
+        description: 'June 2023: Partnered with VOSKER for support line services in Canada',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+  <Content
+    title="Why Choose CXperts?"
+    subtitle="Our commitment to excellence sets us apart"
+    items={[
+      {
+        title: 'Strategic Location',
+        description: 'Centrally located in downtown Cairo, providing easy access and efficient operations.',
+      },
+      {
+        title: 'Advanced Technology',
+        description: 'Utilizing cutting-edge AutoML systems to enhance content review and improve customer conversations.',
+      },
+      {
+        title: 'Employee-Centric Culture',
+        description: 'Creating a comfortable and respectful work environment that empowers our team.',
+      },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building Success Together</h3>
+      Our dedication to innovation and excellence drives us to consistently exceed client expectations. We combine strategic thinking, technological advancement, and human expertise to deliver outstanding results.
+    </Fragment>
+  </Content>
+
+  <!-- CallToAction Widget *********** -->
+  <CallToAction
+    title="Ready to Transform Your Customer Experience?"
+    subtitle="Join the growing list of businesses that trust CXperts for their customer service needs."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get Started',
+        href: '/contact',
+      },
+    ]}
+  />
+</Layout>

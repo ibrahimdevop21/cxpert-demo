@@ -1,0 +1,164 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { Image } from 'astro:assets';
+
+// Import partner logos
+import redingtonLogo from '~/assets/cx-logos/Redington_Logo.jpg';
+import orascomLogo from '~/assets/cx-logos/Orascom.png';
+import hawanaLogo from '~/assets/cx-logos/Hawana_Salalah-300x210.png';
+import jebelLogo from '~/assets/cx-logos/jebel-safeh.jpg';
+import voskerLogo from '~/assets/cx-logos/VOSKER_Logo.png';
+import spiroLogo from '~/assets/cx-logos/spiro.png';
+import spypointLogo from '~/assets/cx-logos/spypoint.png';
+import lemonLogo from '~/assets/cx-logos/big-black-lemon-logo-1342x993.png';
+
+const metadata = {
+  title: 'Our Partners',
+};
+
+const partners = [
+  {
+    name: 'Redington',
+    logo: redingtonLogo,
+    description: 'Support line services partner in the MENA region',
+  },
+  {
+    name: 'ORASCOM',
+    logo: orascomLogo,
+    description: 'Strategic technology and infrastructure partner',
+  },
+  {
+    name: 'HAWANA SALALAH',
+    logo: hawanaLogo,
+    description: 'Hospitality and tourism services partner',
+  },
+  {
+    name: 'Jebel Sifah MARINA',
+    logo: jebelLogo,
+    description: 'Marine and tourism services partner',
+  },
+  {
+    name: 'VOSKER',
+    logo: voskerLogo,
+    description: 'Support line services partner in Canada',
+  },
+  {
+    name: 'Spiro',
+    logo: spiroLogo,
+    description: 'Technology solutions partner',
+  },
+  {
+    name: 'SpyPoint',
+    logo: spypointLogo,
+    description: 'Security solutions partner',
+  },
+  {
+    name: 'Lemon',
+    logo: lemonLogo,
+    description: 'Healthcare services partner',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+  <HeroText
+    title="Our Partners"
+    subtitle="We collaborate with industry leaders to deliver exceptional services"
+  />
+
+  <!-- Partners Grid -->
+  <section class="py-16 px-4 mx-auto max-w-6xl lg:py-20">
+    <div class="flex flex-col mb-12 text-center">
+      <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-4">Trusted by Industry Leaders</h2>
+      <p class="text-lg text-gray-600 dark:text-gray-400">
+        Our partnerships enable us to deliver comprehensive solutions and exceptional value to our clients.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {partners.map(partner => (
+        <div class="flex flex-col items-center p-6 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+          <div class="w-48 h-32 mb-4 flex items-center justify-center">
+            <Image
+              src={partner.logo}
+              alt={`${partner.name} logo`}
+              class="object-contain w-full h-full"
+              width={192}
+              height={128}
+            />
+          </div>
+          <h3 class="text-xl font-bold mb-2 text-center">{partner.name}</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-center">{partner.description}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Content Widget **************** -->
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Global Network',
+        description:
+          'Our partnerships extend across multiple countries, enabling us to serve clients worldwide.',
+      },
+      {
+        title: 'Industry Expertise',
+        description:
+          'Partners from various sectors bring diverse expertise to enhance our service offerings.',
+      },
+      {
+        title: 'Innovation Focus',
+        description:
+          'Collaboration with technology leaders keeps us at the forefront of industry innovation.',
+      },
+    ]}
+    image={{ src: '~/assets/images/partners.jpg', alt: 'CXperts Partners' }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Partnership Benefits</h3>
+      Our strategic partnerships enable us to deliver comprehensive solutions and exceptional value to our clients.
+    </Fragment>
+  </Content>
+
+  <!-- Testimonials -->
+  <Content>
+    <Fragment slot="content">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-8">What Our Partners Say</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <blockquote class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+          <p class="mb-4">"CXperts has made us see how reliability and consistency can create magic."</p>
+          <footer class="font-semibold">- Mohamed Haroun, Co-Founder, KitesDev</footer>
+        </blockquote>
+        <blockquote class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+          <p class="mb-4">"CXperts has rapidly familiarized itself with the environment to suit a challenging market and derived outstanding performance. We're very proud to be a part of this team."</p>
+          <footer class="font-semibold">- CEO, G2A Consulting</footer>
+        </blockquote>
+      </div>
+    </Fragment>
+  </Content>
+
+  <!-- CallToAction Widget *********** -->
+  <CallToAction
+    title="Become a Partner"
+    subtitle="Join our network of industry leaders and innovators"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contact Us',
+        href: '/contact',
+      },
+      {
+        text: 'Learn More',
+        href: '/about',
+      },
+    ]}
+  />
+</Layout>

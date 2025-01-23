@@ -1,0 +1,39 @@
+:root {
+  --aw-color-primary: rgb(32, 79, 143);
+  --aw-color-secondary: rgb(252, 185, 0);
+  --aw-color-accent: rgb(252, 185, 0);
+
+  /* Light mode */
+  --aw-color-bg-page: #ffffff;
+  --aw-color-text-heading: rgb(32, 79, 143);
+  --aw-color-text-default: #444444;
+  --aw-color-text-muted: #666666;
+}
+
+.dark {
+  --aw-color-bg-page: #0b1120;
+  --aw-color-text-heading: rgb(252, 185, 0);
+  --aw-color-text-default: #e2e8f0;
+  --aw-color-text-muted: #94a3b8;
+}
+
+/* Additional custom styles */
+.text-accent {
+  color: var(--aw-color-accent);
+}
+
+.bg-primary {
+  background-color: var(--aw-color-primary);
+}
+
+.bg-secondary {
+  background-color: var(--aw-color-secondary);
+}
+
+.border-primary {
+  border-color: var(--aw-color-primary);
+}
+
+.border-secondary {
+  border-color: var(--aw-color-secondary);
+}

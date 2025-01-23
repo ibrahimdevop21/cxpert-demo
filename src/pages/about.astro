@@ -1,0 +1,126 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'About CXperts',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+  <HeroText
+    tagline="About Us"
+    title="Our Story"
+  >
+    <Fragment slot="subtitle">
+      CXperts is an Egyptian-based Business Process Outsourcing (BPO) company founded on the legacy of thirteen previous companies under the GO Group. Our journey is built on a foundation of experience, innovation, and commitment to excellence in customer service.
+    </Fragment>
+  </HeroText>
+
+  <!-- Content Widget **************** -->
+  <Content>
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Mission</h3>
+      To improve the overall customer experience by rapidly providing feedback and enhancing the quality of operations using AI systems.
+      
+      <br/><br/>
+      
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Vision</h3>
+      To elevate the contact center experience by leveraging AutoML systems to review and improve customer conversations, ensuring compliance with customer needs.
+    </Fragment>
+  </Content>
+
+  <!-- Features2 Widget ************** -->
+  <Features2
+    title="Our Values"
+    subtitle="The principles that guide everything we do"
+    items={[
+      {
+        title: 'Commitment',
+        description: 'We are dedicated to delivering excellence in every interaction and service we provide.',
+        icon: 'tabler:hand-stop',
+      },
+      {
+        title: 'Innovation',
+        description: 'We continuously evolve and adapt to new technologies and methodologies to stay ahead.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Quality',
+        description: 'We maintain the highest standards in our services and operations.',
+        icon: 'tabler:award',
+      },
+      {
+        title: 'Diversity',
+        description: 'We embrace and celebrate the diverse perspectives and talents of our team.',
+        icon: 'tabler:users-group',
+      },
+      {
+        title: 'Teamwork',
+        description: 'We believe in the power of collaboration and mutual support.',
+        icon: 'tabler:friends',
+      },
+    ]}
+  />
+
+  <!-- Stats Widget ****************** -->
+  <Stats
+    title="Our Global Presence"
+    stats={[
+      { title: 'Countries Served', amount: '7' },
+      { title: 'Team Members', amount: '200+' },
+      { title: 'Client Satisfaction', amount: '98%' },
+      { title: 'Languages Supported', amount: '10+' },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Strategic Location',
+        description:
+          'Our headquarters in downtown Cairo serves as a central hub for our operations, providing easy access and efficient service delivery.',
+      },
+      {
+        title: 'Technology-Driven',
+        description:
+          'We leverage cutting-edge AutoML systems and advanced technologies to enhance our service quality and efficiency.',
+      },
+      {
+        title: 'Global Reach',
+        description:
+          'We serve clients across Egypt, UAE, USA, Australia, Canada, Oman, and Saudi Arabia with multilingual support capabilities.',
+      },
+    ]}
+    image={{ src: '~/assets/images/office.jpg', alt: 'CXperts Office' }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building Global Connections</h3>
+      Our strategic presence and technological capabilities enable us to serve clients worldwide while maintaining the highest standards of service quality.
+    </Fragment>
+  </Content>
+
+  <!-- CallToAction Widget *********** -->
+  <CallToAction
+    title="Ready to Experience Excellence?"
+    subtitle="Join our growing list of satisfied clients and transform your customer experience."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get Started',
+        href: '/contact',
+      },
+      {
+        text: 'Learn More',
+        href: '/services',
+      },
+    ]}
+  />
+</Layout>
